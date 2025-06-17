@@ -16,3 +16,10 @@ Most Level 1 kernels attain 2.0x - 15.0x speedups over Arm Performance Libraries
 Disclaimers:
 1. Most code in test/ is LLM generated with close human direction.
 2. You definitely should not run this code in production.
+
+To run (expects ARMPL for benchmarks):
+```
+mkdir build && cd build
+cmake .. && make
+ctest
+```
