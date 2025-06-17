@@ -15,6 +15,18 @@ void cblas_daxpy_unroll4(size_t n, double alpha, double* __restrict x,
 void cblas_daxpy_unroll8(size_t n, double alpha, double* __restrict x,
 						 size_t incx, double* __restrict y, size_t incy);
 
+void cblas_daxpy_unroll2_uncoupled(size_t n, double alpha, double* __restrict x,
+								   size_t incx, double* __restrict y,
+								   size_t incy);
+
+void cblas_daxpy_unroll4_uncoupled(size_t n, double alpha, double* __restrict x,
+								   size_t incx, double* __restrict y,
+								   size_t incy);
+
+void cblas_daxpy_unroll8_uncoupled(size_t n, double alpha, double* __restrict x,
+								   size_t incx, double* __restrict y,
+								   size_t incy);
+
 void cblas_daxpy_assume_aligned(size_t n, double alpha, double* __restrict x,
 								size_t incx, double* __restrict y, size_t incy);
 
