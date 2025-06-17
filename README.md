@@ -1,7 +1,7 @@
 My "coding-gym" implementations of BLAS kernels, aiming for maximum performance on M1 Macbook Air. 
 
 Features:
-1. Standard CBLAS interface
+1. Standard CBLAS interface, routines exposed through a single `swblas` namespace.
 2. Faster than ARMPL
 3. Fully visible code & programming choices
 
@@ -13,5 +13,5 @@ Drawbacks:
 Most Level 1 kernels attain 2.0x - 15.0x speedups over Arm Performance Libraries BLAS.
 
 Disclaimers:
-1. Most code in test/ is LLM generated.
+1. Most code in test/ is LLM generated with close human direction.
 2. You definitely should not run this code in production.
