@@ -1,0 +1,112 @@
+
+=== Vector size: 100 elements ===
+
+Unit stride (incx=1)
+    Function   Time (ms)     GFLOP/s     Speedup           Norm
+----------------------------------------------------------------
+       ARMPL        0.00        2.38       1.00x 5.683753333e+01
+       Naive        0.00        4.88       2.05x 5.683753333e+01
+     Unroll2        0.00        4.76       2.00x 5.683753333e+01
+     Unroll4        0.00        4.76       2.00x 5.683753333e+01
+     Unroll8        0.00        4.76       2.00x 5.683753333e+01
+         SSE        0.00        4.76       2.00x 5.683753333e+01
+    SSE UnR2        0.00        4.88       2.05x 5.683753333e+01
+    SSE UnR4        0.00        4.76       2.00x 5.665152304e+01
+    SSE UnR8        0.00        4.76       2.00x 5.665152304e+01
+
+Strided X (incx=2)
+    Function   Time (ms)     GFLOP/s     Speedup           Norm
+----------------------------------------------------------------
+       ARMPL        0.00        0.60       1.00x 6.338940352e+01
+       Naive        0.00        1.60       2.67x 6.338940352e+01
+     Unroll2        0.00        4.88       8.15x 6.338940352e+01
+     Unroll4        0.00         inf        infx 6.338940352e+01
+     Unroll8        0.00        4.76       7.95x 6.338940352e+01
+         SSE         N/A         N/A         N/A            N/A
+    SSE UnR2         N/A         N/A         N/A            N/A
+    SSE UnR4         N/A         N/A         N/A            N/A
+    SSE UnR8         N/A         N/A         N/A            N/A
+
+=== Vector size: 10000 elements ===
+
+Unit stride (incx=1)
+    Function   Time (ms)     GFLOP/s     Speedup           Norm
+----------------------------------------------------------------
+       ARMPL        0.01        3.10       1.00x 5.807751486e+02
+       Naive        0.00       12.31       3.97x 5.807751486e+02
+     Unroll2        0.00       12.31       3.97x 5.807751486e+02
+     Unroll4        0.00        6.23       2.01x 5.807751486e+02
+     Unroll8        0.00       12.00       3.87x 5.807751486e+02
+         SSE        0.01        3.12       1.01x 5.807751486e+02
+    SSE UnR2        0.00        6.23       2.01x 5.807751486e+02
+    SSE UnR4        0.00       12.63       4.08x 5.807751486e+02
+    SSE UnR8        0.00       24.01       7.75x 5.807751486e+02
+
+Strided X (incx=2)
+    Function   Time (ms)     GFLOP/s     Speedup           Norm
+----------------------------------------------------------------
+       ARMPL        0.04        0.56       1.00x 5.773800346e+02
+       Naive        0.01        1.55       2.75x 5.773800346e+02
+     Unroll2        0.00       10.21      18.17x 5.773800346e+02
+     Unroll4        0.00        6.23      11.09x 5.773800346e+02
+     Unroll8        0.00       10.00      17.79x 5.773800346e+02
+         SSE         N/A         N/A         N/A            N/A
+    SSE UnR2         N/A         N/A         N/A            N/A
+    SSE UnR4         N/A         N/A         N/A            N/A
+    SSE UnR8         N/A         N/A         N/A            N/A
+
+=== Vector size: 100000 elements ===
+
+Unit stride (incx=1)
+    Function   Time (ms)     GFLOP/s     Speedup           Norm
+----------------------------------------------------------------
+       ARMPL        0.06        3.09       1.00x 1.825193417e+03
+       Naive        0.02       12.40       4.01x 1.825193417e+03
+     Unroll2        0.02       12.31       3.98x 1.825193417e+03
+     Unroll4        0.03        6.19       2.00x 1.825193417e+03
+     Unroll8        0.02       12.03       3.89x 1.825193417e+03
+         SSE        0.06        3.09       1.00x 1.825193417e+03
+    SSE UnR2        0.03        6.19       2.00x 1.825193417e+03
+    SSE UnR4        0.02       12.34       3.99x 1.825193417e+03
+    SSE UnR8        0.01       20.60       6.66x 1.825193417e+03
+
+Strided X (incx=2)
+    Function   Time (ms)     GFLOP/s     Speedup           Norm
+----------------------------------------------------------------
+       ARMPL        0.37        0.54       1.00x 1.823684377e+03
+       Naive        0.13        1.49       2.76x 1.823684377e+03
+     Unroll2        0.02        9.98      18.57x 1.823684377e+03
+     Unroll4        0.03        5.93      11.04x 1.823684377e+03
+     Unroll8        0.02       10.08      18.76x 1.823684377e+03
+         SSE         N/A         N/A         N/A            N/A
+    SSE UnR2         N/A         N/A         N/A            N/A
+    SSE UnR4         N/A         N/A         N/A            N/A
+    SSE UnR8         N/A         N/A         N/A            N/A
+
+=== Vector size: 1000000 elements ===
+
+Unit stride (incx=1)
+    Function   Time (ms)     GFLOP/s     Speedup           Norm
+----------------------------------------------------------------
+       ARMPL        0.65        3.09       1.00x 5.769915156e+03
+       Naive        0.16       12.47       4.04x 5.769915156e+03
+     Unroll2        0.16       12.18       3.95x 5.769915156e+03
+     Unroll4        0.32        6.30       2.04x 5.769915156e+03
+     Unroll8        0.16       12.13       3.93x 5.769915156e+03
+         SSE        0.63        3.18       1.03x 5.769915156e+03
+    SSE UnR2        0.31        6.35       2.06x 5.769915156e+03
+    SSE UnR4        0.16       12.36       4.00x 5.769915156e+03
+    SSE UnR8        0.11       17.61       5.71x 5.769915156e+03
+
+Strided X (incx=2)
+    Function   Time (ms)     GFLOP/s     Speedup           Norm
+----------------------------------------------------------------
+       ARMPL        3.45        0.58       1.00x 5.769843059e+03
+       Naive        1.25        1.59       2.75x 5.769843059e+03
+     Unroll2        0.24        8.20      14.14x 5.769843059e+03
+     Unroll4        0.32        6.20      10.70x 5.769843059e+03
+     Unroll8        0.24        8.22      14.17x 5.769843059e+03
+         SSE         N/A         N/A         N/A            N/A
+    SSE UnR2         N/A         N/A         N/A            N/A
+    SSE UnR4         N/A         N/A         N/A            N/A
+    SSE UnR8         N/A         N/A         N/A            N/A
