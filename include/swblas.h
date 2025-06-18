@@ -23,6 +23,10 @@ float cblas_sdot(size_t n, float* x, size_t incx, float* y, size_t incy);
 double cblas_dnrm2(size_t n, double* x, size_t incx);
 float cblas_snrm2(size_t n, float* x, size_t incx);
 
+// asum
+double cblas_dasum(size_t n, double* x, size_t incx);
+float cblas_sasum(size_t n, float* x, size_t incx);
+
 }  // namespace swblas
 
 #endif

@@ -21,6 +21,9 @@ void cblas_dscal_assume_aligned(size_t n, double alpha, double* __restrict x,
 void cblas_dscal_sse(size_t n, double alpha, double* __restrict x,
 					 size_t /*incx = 1*/);
 
+void cblas_dscal_neon(size_t n, double alpha, double* __restrict x,
+					  size_t /*incx = 1*/);
+
 void cblas_dscal_sse_unroll2(size_t n, double alpha, double* __restrict x,
 							 size_t /*incx = 1*/);
 

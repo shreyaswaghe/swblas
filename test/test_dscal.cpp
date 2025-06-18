@@ -40,6 +40,7 @@ int main() {
 		{"Unroll8", cblas_dscal_unroll8, false},
 		{"Aligned", cblas_dscal_assume_aligned, false},
 		{"SSE", reinterpret_cast<DscalFunc>(cblas_dscal_sse), true},
+		{"Neon", reinterpret_cast<DscalFunc>(cblas_dscal_neon), true},
 		{"SSE UnR2", reinterpret_cast<DscalFunc>(cblas_dscal_sse_unroll2),
 		 true},
 		{"SSE UnR4", reinterpret_cast<DscalFunc>(cblas_dscal_sse_unroll4),

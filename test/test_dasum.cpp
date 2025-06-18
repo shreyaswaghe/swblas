@@ -7,16 +7,16 @@
 #include <ratio>
 #include <vector>
 
-#include "../include/dnrm2.h"  // Replace with your actual path
+#include "../include/dasum.h"  // Replace with your actual path
 #include "armpl.h"
 
-double armpl_dnrm2_wrapper(size_t n, double* x, size_t incx) {
-	return cblas_dnrm2(n, x, incx);
+double armpl_dasum_wrapper(size_t n, double* x, size_t incx) {
+	return cblas_dasum(n, x, incx);
 }
 
-using Dnrm2Func = double (*)(size_t, double*, size_t);
+using dasumFunc = double (*)(size_t, double*, size_t);
 
-double benchmark_ms(Dnrm2Func func, size_t n, double* x, size_t incx = 1,
+double benchmark_ms(dasumFunc func, size_t n, double* x, size_t incx = 1,
 					double* result = nullptr) {
 	auto start = std::chrono::high_resolution_clock::now();
 	double res = func(n, x, incx);
@@ -32,25 +32,25 @@ int main() {
 
 	struct {
 		const char* name;
-		Dnrm2Func func;
+		dasumFunc func;
 		bool needs_unit_stride;
-	} functions[] = {{"ARMPL", armpl_dnrm2_wrapper, false},
-					 {"Naive", cblas_dnrm2_naive, false},
-					 {"Unroll2", cblas_dnrm2_unroll2, false},
-					 {"Unroll4", cblas_dnrm2_unroll4, false},
-					 {"Unroll8", cblas_dnrm2_unroll8, false},
-					 {"SSE", cblas_dnrm2_sse, true},
-					 {"SSE UnR2", cblas_dnrm2_sse_unroll2, true},
-					 {"SSE UnR4", cblas_dnrm2_sse_unroll4, true},
-					 {"SSE UnR8", cblas_dnrm2_sse_unroll8, true}};
+	} functions[] = {{"ARMPL", armpl_dasum_wrapper, false},
+					 {"Naive", cblas_dasum_naive, false},
+					 {"Unroll2", cblas_dasum_unroll2, false},
+					 {"Unroll4", cblas_dasum_unroll4, false},
+					 {"Unroll8", cblas_dasum_unroll8, false},
+					 {"SSE", cblas_dasum_sse, true},
+					 {"SSE UnR2", cblas_dasum_sse_unroll2, true},
+					 {"SSE UnR4", cblas_dasum_sse_unroll4, true},
+					 {"SSE UnR8", cblas_dasum_sse_unroll8, true}};
 
 	struct {
 		const char* name;
 		size_t incx;
 	} stride_tests[] = {{"Unit stride (incx=1)", 1}, {"Strided X (incx=2)", 2}};
 
-	std::mt19937 gen(8928);
-	std::uniform_real_distribution<double> dist(-10.0, 10.0);
+	std::mt19937 gen(42);
+	std::uniform_real_distribution<double> dist(-1.0, 1.0);
 
 	for (size_t n : sizes) {
 		std::cout << "\n=== Vector size: " << n << " elements ===\n";
@@ -119,7 +119,7 @@ int main() {
 							  << std::setw(12) << gflops << std::setw(11)
 							  << std::fixed << std::setprecision(2) << speedup
 							  << "x" << std::setw(16) << std::scientific
-							  << std::setprecision(9) << result << "\n";
+							  << std::setprecision(6) << result << "\n";
 				}
 			}
 
