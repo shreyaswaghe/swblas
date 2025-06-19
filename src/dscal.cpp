@@ -1,6 +1,8 @@
 #include <cstddef>
+#include <cstdint>
 
 #include "../include/dscal.h"
+#include "sdot.h"
 #include "sse2neon.h"
 
 void cblas_dscal_full_naive(size_t n, double alpha, double* __restrict x,
@@ -87,7 +89,7 @@ void cblas_dscal_sse_unroll2(size_t n, double alpha, double* __restrict x,
 		__m128d x1 = _mm_load_pd(x + i);
 		__m128d x2 = _mm_load_pd(x + i + 2);
 		_mm_store_pd(x + i, _mm_mul_pd(a, x1));
-		_mm_store_pd(x + i + 2, _mm_mul_pd(a, x1));
+		_mm_store_pd(x + i + 2, _mm_mul_pd(a, x2));
 	}
 	for (; i < n; i++) {
 		x[i] *= alpha;
@@ -136,8 +138,18 @@ namespace swblas {
 
 void cblas_dscal(size_t n, double alpha, double* x, size_t incx) {
 	if (n == 0) return;
-	if (incx == 1) cblas_dscal_sse_unroll2(n, alpha, x, incx);
-	cblas_dscal_full_naive(n, alpha, x, incx);
+
+	bool bdry_diff = (uintptr_t)x % 16;
+	// for doubles, they can only be off-by-one for a 16 byte bdry
+	if (bdry_diff) {
+		x[0] *= alpha;
+		x += incx;
+		n -= 1;
+	}
+	if (incx == 1)
+		cblas_dscal_sse_unroll4(n, alpha, x, 1);
+	else
+		cblas_dscal_unroll8(n, alpha, x, incx);
 }
 
 }  // namespace swblas
