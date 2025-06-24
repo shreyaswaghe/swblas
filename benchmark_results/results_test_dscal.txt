@@ -1,90 +1,150 @@
 
+=== Vector size: 100 elements ===
+
+Unit stride (incx=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL        0.00        0.60      1.00x        PASS
+       Naive        0.00        1.20      2.01x        PASS
+     Unroll2        0.00        2.38      3.98x        PASS
+     Unroll4        0.00        2.38      3.98x        PASS
+     Unroll8        0.00        2.38      3.98x        PASS
+     Aligned        0.00         inf       infx        PASS
+         SSE        0.00        2.38      3.98x        PASS
+        Neon        0.00        2.38      3.98x        PASS
+    SSE UnR2        0.00        2.44      4.07x        PASS
+    SSE UnR4        0.00        2.38      3.98x        PASS
+
+Strided (incx=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL        0.00        2.38      1.00x        PASS
+       Naive        0.00        2.38      1.00x        PASS
+     Unroll2        0.00        2.38      1.00x        PASS
+     Unroll4        0.00        2.44      1.02x        PASS
+     Unroll8        0.00        2.44      1.02x        PASS
+     Aligned        0.00        2.38      1.00x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        Neon         N/A         N/A       N/A        N/A
+    SSE UnR2         N/A         N/A       N/A        N/A
+    SSE UnR4         N/A         N/A       N/A        N/A
+
+=== Vector size: 1000 elements ===
+
+Unit stride (incx=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL        0.00        5.99      1.00x        PASS
+       Naive        0.00        8.00      1.34x        PASS
+     Unroll2        0.00        4.00      0.67x        PASS
+     Unroll4        0.00        4.81      0.80x        PASS
+     Unroll8        0.00        4.00      0.67x        PASS
+     Aligned        0.00        8.00      1.34x        PASS
+         SSE        0.00        4.78      0.80x        PASS
+        Neon        0.00        4.78      0.80x        PASS
+    SSE UnR2        0.00        8.00      1.34x        PASS
+    SSE UnR4        0.00        8.00      1.34x        PASS
+
+Strided (incx=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL        0.00        4.00      1.00x        PASS
+       Naive        0.00        2.67      0.67x        PASS
+     Unroll2        0.00        4.81      1.20x        PASS
+     Unroll4        0.00        4.00      1.00x        PASS
+     Unroll8        0.00        4.78      1.20x        PASS
+     Aligned        0.00        2.67      0.67x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        Neon         N/A         N/A       N/A        N/A
+    SSE UnR2         N/A         N/A       N/A        N/A
+    SSE UnR4         N/A         N/A       N/A        N/A
+
 === Vector size: 10000 elements ===
 
 Unit stride (incx=1)
-  Function   Time (ms)     GFLOP/s  Speedup
---------------------------------------------
-     ARMPL        0.00        8.89      1.00x
-     Naive        0.00        9.60      1.08x
-   Unroll2        0.00        4.90      0.55x
-   Unroll4        0.00        5.58      0.63x
-   Unroll8        0.00        5.00      0.56x
-   Aligned        0.00        9.61      1.08x
-       SSE        0.00        6.15      0.69x
-      Neon        0.00        6.15      0.69x
-  SSE UnR2        0.00       10.00      1.12x
-  SSE UnR4        0.00        9.60      1.08x
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL        0.00        6.32      1.00x        PASS
+       Naive        0.00        6.85      1.08x        PASS
+     Unroll2        0.00        3.75      0.59x        PASS
+     Unroll4        0.00        4.00      0.63x        PASS
+     Unroll8        0.00        4.07      0.64x        PASS
+     Aligned        0.00        6.86      1.09x        PASS
+         SSE        0.00        4.14      0.66x        PASS
+        Neon        0.00        4.44      0.70x        PASS
+    SSE UnR2        0.00        6.67      1.06x        PASS
+    SSE UnR4        0.00        6.85      1.08x        PASS
 
 Strided (incx=2)
-  Function   Time (ms)     GFLOP/s  Speedup
---------------------------------------------
-     ARMPL        0.00        3.43      1.00x
-     Naive        0.00        3.08      0.90x
-   Unroll2        0.00        3.43      1.00x
-   Unroll4        0.00        3.43      1.00x
-   Unroll8        0.00        3.38      0.99x
-   Aligned        0.00        3.08      0.90x
-       SSE         N/A         N/A      N/A
-      Neon         N/A         N/A      N/A
-  SSE UnR2         N/A         N/A      N/A
-  SSE UnR4         N/A         N/A      N/A
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL        0.00        3.48      1.00x        PASS
+       Naive        0.00        2.96      0.85x        PASS
+     Unroll2        0.00        3.48      1.00x        PASS
+     Unroll4        0.00        3.48      1.00x        PASS
+     Unroll8        0.00        3.38      0.97x        PASS
+     Aligned        0.00        2.93      0.84x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        Neon         N/A         N/A       N/A        N/A
+    SSE UnR2         N/A         N/A       N/A        N/A
+    SSE UnR4         N/A         N/A       N/A        N/A
 
 === Vector size: 100000 elements ===
 
 Unit stride (incx=1)
-  Function   Time (ms)     GFLOP/s  Speedup
---------------------------------------------
-     ARMPL        0.01        6.90      1.00x
-     Naive        0.01        6.96      1.01x
-   Unroll2        0.02        4.62      0.67x
-   Unroll4        0.02        4.72      0.68x
-   Unroll8        0.02        4.44      0.64x
-   Aligned        0.01        6.96      1.01x
-       SSE        0.02        6.06      0.88x
-      Neon        0.02        5.66      0.82x
-  SSE UnR2        0.01        7.32      1.06x
-  SSE UnR4        0.01        6.98      1.01x
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL        0.02        6.56      1.00x        PASS
+       Naive        0.02        6.63      1.01x        PASS
+     Unroll2        0.02        4.44      0.68x        PASS
+     Unroll4        0.02        4.50      0.69x        PASS
+     Unroll8        0.02        4.19      0.64x        PASS
+     Aligned        0.04        2.84      0.43x        PASS
+         SSE        0.04        2.41      0.37x        PASS
+        Neon        0.04        2.43      0.37x        PASS
+    SSE UnR2        0.04        2.80      0.43x        PASS
+    SSE UnR4        0.04        2.84      0.43x        PASS
 
 Strided (incx=2)
-  Function   Time (ms)     GFLOP/s  Speedup
---------------------------------------------
-     ARMPL        0.03        3.45      1.00x
-     Naive        0.03        3.19      0.92x
-   Unroll2        0.03        3.46      1.00x
-   Unroll4        0.03        3.46      1.00x
-   Unroll8        0.03        3.44      1.00x
-   Aligned        0.03        3.20      0.93x
-       SSE         N/A         N/A      N/A
-      Neon         N/A         N/A      N/A
-  SSE UnR2         N/A         N/A      N/A
-  SSE UnR4         N/A         N/A      N/A
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL        0.06        1.63      1.00x        PASS
+       Naive        0.07        1.49      0.91x        PASS
+     Unroll2        0.06        1.63      1.00x        PASS
+     Unroll4        0.06        1.63      1.00x        PASS
+     Unroll8        0.06        1.61      0.99x        PASS
+     Aligned        0.07        1.49      0.91x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        Neon         N/A         N/A       N/A        N/A
+    SSE UnR2         N/A         N/A       N/A        N/A
+    SSE UnR4         N/A         N/A       N/A        N/A
 
 === Vector size: 1000000 elements ===
 
 Unit stride (incx=1)
-  Function   Time (ms)     GFLOP/s  Speedup
---------------------------------------------
-     ARMPL        0.15        6.59      1.00x
-     Naive        0.15        6.68      1.01x
-   Unroll2        0.31        3.25      0.49x
-   Unroll4        0.30        3.34      0.51x
-   Unroll8        0.26        3.85      0.59x
-   Aligned        0.15        6.70      1.02x
-       SSE        0.23        4.40      0.67x
-      Neon        0.23        4.37      0.66x
-  SSE UnR2        0.14        6.93      1.05x
-  SSE UnR4        0.15        6.70      1.02x
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL        0.24        4.10      1.00x        PASS
+       Naive        0.22        4.65      1.13x        PASS
+     Unroll2        0.41        2.43      0.59x        PASS
+     Unroll4        0.37        2.69      0.66x        PASS
+     Unroll8        0.32        3.16      0.77x        PASS
+     Aligned        0.17        5.85      1.43x        PASS
+         SSE        0.26        3.84      0.94x        PASS
+        Neon        0.24        4.12      1.00x        PASS
+    SSE UnR2        0.16        6.21      1.52x        PASS
+    SSE UnR4        0.15        6.50      1.59x        PASS
 
 Strided (incx=2)
-  Function   Time (ms)     GFLOP/s  Speedup
---------------------------------------------
-     ARMPL        0.31        3.20      1.00x
-     Naive        0.34        2.97      0.93x
-   Unroll2        0.31        3.21      1.00x
-   Unroll4        0.31        3.19      1.00x
-   Unroll8        0.31        3.25      1.02x
-   Aligned        0.33        3.07      0.96x
-       SSE         N/A         N/A      N/A
-      Neon         N/A         N/A      N/A
-  SSE UnR2         N/A         N/A      N/A
-  SSE UnR4         N/A         N/A      N/A
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL        0.32        3.09      1.00x        PASS
+       Naive        0.38        2.65      0.86x        PASS
+     Unroll2        0.33        3.01      0.97x        PASS
+     Unroll4        0.33        3.07      0.99x        PASS
+     Unroll8        0.34        2.97      0.96x        PASS
+     Aligned        0.35        2.83      0.92x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        Neon         N/A         N/A       N/A        N/A
+    SSE UnR2         N/A         N/A       N/A        N/A
+    SSE UnR4         N/A         N/A       N/A        N/A

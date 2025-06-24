@@ -5,15 +5,15 @@ Unit stride (incx=1, incy=1)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
        ARMPL        0.00        4.76       1.00x    1.708390e-01
-       Naive        0.00        4.76       1.00x    1.708390e-01
-     Unroll2        0.00        4.76       1.00x    1.708390e-01
+       Naive        0.00        4.88       1.02x    1.708390e-01
+     Unroll2        0.00        2.41       0.51x    1.708390e-01
      Unroll4        0.00        4.76       1.00x    1.708390e-01
   Un2 Parith        0.00        1.60       0.34x    1.708390e-01
-  Un4 Parith        0.00        2.41       0.51x    1.708390e-01
-     Aligned        0.00        4.88       1.02x    1.708390e-01
+  Un4 Parith        0.00        2.38       0.50x    1.708390e-01
+     Aligned        0.00         inf        infx    1.708390e-01
    AlignedU2        0.00        1.60       0.34x    1.708390e-01
      CopySSE        0.00        4.76       1.00x    1.708390e-01
-         SSE        0.00        4.76       1.00x    1.708390e-01
+         SSE        0.00        2.41       0.51x    1.708390e-01
     SSE UnR2        0.00        4.76       1.00x    1.708390e-01
     SSE UnR4        0.00        4.76       1.00x    1.708390e-01
 
@@ -21,14 +21,14 @@ Strided X (incx=2, incy=1)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
        ARMPL        0.00        4.76       1.00x   -8.285511e+00
-       Naive        0.00        2.41       0.51x   -8.285511e+00
-     Unroll2        0.00        2.41       0.51x   -8.285511e+00
-     Unroll4        0.00        4.76       1.00x   -8.285511e+00
-  Un2 Parith        0.00        2.41       0.51x   -8.285511e+00
-  Un4 Parith        0.00        2.38       0.50x   -8.285511e+00
+       Naive        0.00        1.60       0.34x   -8.285511e+00
+     Unroll2        0.00        4.76       1.00x   -8.285511e+00
+     Unroll4        0.00        4.88       1.02x   -8.285511e+00
+  Un2 Parith        0.00        2.38       0.50x   -8.285511e+00
+  Un4 Parith        0.00        2.41       0.51x   -8.285511e+00
      Aligned        0.00        1.60       0.34x   -8.285511e+00
-   AlignedU2        0.00        2.41       0.51x   -8.285511e+00
-     CopySSE        0.00        2.41       0.51x   -8.285511e+00
+   AlignedU2        0.00        1.60       0.34x   -8.285511e+00
+     CopySSE        0.00        2.38       0.50x   -8.285511e+00
          SSE         N/A         N/A         N/A            N/A
     SSE UnR2         N/A         N/A         N/A            N/A
     SSE UnR4         N/A         N/A         N/A            N/A
@@ -37,14 +37,14 @@ Strided Y (incx=1, incy=2)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
        ARMPL        0.00        4.76       1.00x   -1.197742e-01
-       Naive        0.00        1.60       0.34x   -1.197742e-01
+       Naive        0.00        2.38       0.50x   -1.197742e-01
      Unroll2        0.00        4.76       1.00x   -1.197742e-01
      Unroll4        0.00        4.76       1.00x   -1.197742e-01
-  Un2 Parith        0.00        1.60       0.34x   -1.197742e-01
-  Un4 Parith        0.00        1.60       0.34x   -1.197742e-01
-     Aligned        0.00        2.41       0.51x   -1.197742e-01
-   AlignedU2        0.00        2.41       0.51x   -1.197742e-01
-     CopySSE        0.00        4.76       1.00x   -1.197742e-01
+  Un2 Parith        0.00        2.38       0.50x   -1.197742e-01
+  Un4 Parith        0.00        2.41       0.51x   -1.197742e-01
+     Aligned        0.00        1.60       0.34x   -1.197742e-01
+   AlignedU2        0.00        2.38       0.50x   -1.197742e-01
+     CopySSE        0.00        2.41       0.51x   -1.197742e-01
          SSE         N/A         N/A         N/A            N/A
     SSE UnR2         N/A         N/A         N/A            N/A
     SSE UnR4         N/A         N/A         N/A            N/A
@@ -58,9 +58,9 @@ Both strided (incx=2, incy=2)
      Unroll4        0.00        4.76       1.00x    2.202706e-01
   Un2 Parith        0.00        2.41       0.51x    2.202706e-01
   Un4 Parith        0.00        2.41       0.51x    2.202706e-01
-     Aligned        0.00        2.41       0.51x    2.202706e-01
+     Aligned        0.00        1.60       0.34x    2.202706e-01
    AlignedU2        0.00        2.41       0.51x    2.202706e-01
-     CopySSE        0.00        2.38       0.50x    2.202706e-01
+     CopySSE        0.00        1.60       0.34x    2.202706e-01
          SSE         N/A         N/A         N/A            N/A
     SSE UnR2         N/A         N/A         N/A            N/A
     SSE UnR4         N/A         N/A         N/A            N/A
@@ -70,31 +70,31 @@ Both strided (incx=2, incy=2)
 Unit stride (incx=1, incy=1)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
-       ARMPL        0.00        8.89       1.00x   -1.153232e+01
-       Naive        0.00       10.43       1.17x   -1.153232e+01
-     Unroll2        0.01        3.20       0.36x   -1.153232e+01
-     Unroll4        0.00        6.40       0.72x   -1.153232e+01
-  Un2 Parith        0.01        1.60       0.18x   -1.153232e+01
-  Un4 Parith        0.01        1.55       0.17x   -1.153232e+01
-     Aligned        0.00        9.60       1.08x   -1.153232e+01
-   AlignedU2        0.01        1.61       0.18x   -1.153232e+01
-     CopySSE        0.00       10.21       1.15x   -1.153232e+01
-         SSE        0.01        3.18       0.36x   -1.153232e+01
-    SSE UnR2        0.00        6.40       0.72x   -1.153232e+01
-    SSE UnR4        0.00       10.21       1.15x   -1.153232e+01
+       ARMPL        0.00        8.57       1.00x   -1.153232e+01
+       Naive        0.00        9.41       1.10x   -1.153232e+01
+     Unroll2        0.01        2.96       0.35x   -1.153232e+01
+     Unroll4        0.00        6.32       0.74x   -1.153232e+01
+  Un2 Parith        0.01        1.60       0.19x   -1.153232e+01
+  Un4 Parith        0.01        1.60       0.19x   -1.153232e+01
+     Aligned        0.00       10.21       1.19x   -1.153232e+01
+   AlignedU2        0.01        1.60       0.19x   -1.153232e+01
+     CopySSE        0.00       10.21       1.19x   -1.153232e+01
+         SSE        0.01        3.20       0.37x   -1.153232e+01
+    SSE UnR2        0.00        6.40       0.75x   -1.153232e+01
+    SSE UnR4        0.00       10.21       1.19x   -1.153232e+01
 
 Strided X (incx=2, incy=1)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
-       ARMPL        0.00        6.00       1.00x    7.039756e+00
+       ARMPL        0.00        5.93       1.00x    7.039756e+00
        Naive        0.01        1.61       0.27x    7.039756e+00
-     Unroll2        0.01        3.20       0.53x    7.039756e+00
-     Unroll4        0.00        6.00       1.00x    7.039756e+00
+     Unroll2        0.01        3.20       0.54x    7.039756e+00
+     Unroll4        0.00        5.93       1.00x    7.039756e+00
   Un2 Parith        0.01        1.61       0.27x    7.039756e+00
   Un4 Parith        0.01        1.60       0.27x    7.039756e+00
-     Aligned        0.01        1.61       0.27x    7.039756e+00
-   AlignedU2        0.01        1.61       0.27x    7.039756e+00
-     CopySSE        0.01        3.97       0.66x    7.039756e+00
+     Aligned        0.01        1.60       0.27x    7.039756e+00
+   AlignedU2        0.01        1.60       0.27x    7.039756e+00
+     CopySSE        0.01        3.93       0.66x    7.039756e+00
          SSE         N/A         N/A         N/A            N/A
     SSE UnR2         N/A         N/A         N/A            N/A
     SSE UnR4         N/A         N/A         N/A            N/A
@@ -103,12 +103,12 @@ Strided Y (incx=1, incy=2)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
        ARMPL        0.00        5.93       1.00x    1.242693e-01
-       Naive        0.01        1.60       0.27x    1.242693e-01
+       Naive        0.01        1.61       0.27x    1.242693e-01
      Unroll2        0.01        3.20       0.54x    1.242693e-01
      Unroll4        0.00        6.00       1.01x    1.242693e-01
-  Un2 Parith        0.01        1.61       0.27x    1.242693e-01
-  Un4 Parith        0.01        1.61       0.27x    1.242693e-01
-     Aligned        0.01        1.60       0.27x    1.242693e-01
+  Un2 Parith        0.01        1.60       0.27x    1.242693e-01
+  Un4 Parith        0.01        1.60       0.27x    1.242693e-01
+     Aligned        0.01        1.61       0.27x    1.242693e-01
    AlignedU2        0.01        1.61       0.27x    1.242693e-01
      CopySSE        0.01        3.97       0.67x    1.242693e-01
          SSE         N/A         N/A         N/A            N/A
@@ -119,14 +119,14 @@ Both strided (incx=2, incy=2)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
        ARMPL        0.00        5.16       1.00x    4.647221e+00
-       Naive        0.01        1.60       0.31x    4.647221e+00
+       Naive        0.01        1.61       0.31x    4.647221e+00
      Unroll2        0.01        3.20       0.62x    4.647221e+00
-     Unroll4        0.00        5.22       1.01x    4.647221e+00
+     Unroll4        0.00        5.16       1.00x    4.647221e+00
   Un2 Parith        0.01        1.60       0.31x    4.647221e+00
-  Un4 Parith        0.01        1.61       0.31x    4.647221e+00
-     Aligned        0.01        1.60       0.31x    4.647221e+00
+  Un4 Parith        0.01        1.60       0.31x    4.647221e+00
+     Aligned        0.01        1.61       0.31x    4.647221e+00
    AlignedU2        0.01        1.60       0.31x    4.647221e+00
-     CopySSE        0.01        2.45       0.47x    4.647221e+00
+     CopySSE        0.01        2.44       0.47x    4.647221e+00
          SSE         N/A         N/A         N/A            N/A
     SSE UnR2         N/A         N/A         N/A            N/A
     SSE UnR4         N/A         N/A         N/A            N/A
@@ -136,31 +136,31 @@ Both strided (incx=2, incy=2)
 Unit stride (incx=1, incy=1)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
-       ARMPL        0.02        8.96       1.00x    2.361889e+01
-       Naive        0.02       10.57       1.18x    2.361889e+01
-     Unroll2        0.06        3.20       0.36x    2.361889e+01
-     Unroll4        0.03        6.40       0.71x    2.361889e+01
+       ARMPL        0.02        9.09       1.00x    2.361889e+01
+       Naive        0.02       10.57       1.16x    2.361889e+01
+     Unroll2        0.06        3.20       0.35x    2.361889e+01
+     Unroll4        0.03        6.41       0.70x    2.361889e+01
   Un2 Parith        0.12        1.60       0.18x    2.361889e+01
   Un4 Parith        0.12        1.60       0.18x    2.361889e+01
-     Aligned        0.02       10.60       1.18x    2.361889e+01
+     Aligned        0.02       10.57       1.16x    2.361889e+01
    AlignedU2        0.12        1.60       0.18x    2.361889e+01
-     CopySSE        0.02       10.48       1.17x    2.361889e+01
-         SSE        0.06        3.20       0.36x    2.361889e+01
-    SSE UnR2        0.03        6.40       0.71x    2.361889e+01
-    SSE UnR4        0.02       10.48       1.17x    2.361889e+01
+     CopySSE        0.02       10.46       1.15x    2.361889e+01
+         SSE        0.06        3.20       0.35x    2.361889e+01
+    SSE UnR2        0.03        6.41       0.70x    2.361889e+01
+    SSE UnR4        0.02       10.48       1.15x    2.361889e+01
 
 Strided X (incx=2, incy=1)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
-       ARMPL        0.03        5.83       1.00x    1.024055e+02
-       Naive        0.13        1.55       0.27x    1.024055e+02
-     Unroll2        0.06        3.08       0.53x    1.024055e+02
-     Unroll4        0.03        5.80       1.00x    1.024055e+02
-  Un2 Parith        0.13        1.54       0.27x    1.024055e+02
-  Un4 Parith        0.13        1.54       0.27x    1.024055e+02
-     Aligned        0.13        1.54       0.27x    1.024055e+02
-   AlignedU2        0.13        1.54       0.27x    1.024055e+02
-     CopySSE        0.05        3.80       0.65x    1.024055e+02
+       ARMPL        0.03        6.02       1.00x    1.024055e+02
+       Naive        0.12        1.60       0.27x    1.024055e+02
+     Unroll2        0.06        3.20       0.53x    1.024055e+02
+     Unroll4        0.03        6.05       1.00x    1.024055e+02
+  Un2 Parith        0.12        1.60       0.27x    1.024055e+02
+  Un4 Parith        0.12        1.60       0.27x    1.024055e+02
+     Aligned        0.12        1.60       0.27x    1.024055e+02
+   AlignedU2        0.12        1.60       0.27x    1.024055e+02
+     CopySSE        0.05        3.96       0.66x    1.024055e+02
          SSE         N/A         N/A         N/A            N/A
     SSE UnR2         N/A         N/A         N/A            N/A
     SSE UnR4         N/A         N/A         N/A            N/A
@@ -168,14 +168,14 @@ Strided X (incx=2, incy=1)
 Strided Y (incx=1, incy=2)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
-       ARMPL        0.03        6.02       1.00x    3.716818e+01
+       ARMPL        0.03        6.04       1.00x    3.716818e+01
        Naive        0.12        1.60       0.27x    3.716818e+01
      Unroll2        0.06        3.20       0.53x    3.716818e+01
-     Unroll4        0.03        6.04       1.00x    3.716818e+01
+     Unroll4        0.03        6.05       1.00x    3.716818e+01
   Un2 Parith        0.12        1.60       0.27x    3.716818e+01
-  Un4 Parith        0.13        1.60       0.27x    3.716818e+01
-     Aligned        0.13        1.60       0.27x    3.716818e+01
-   AlignedU2        0.13        1.60       0.27x    3.716818e+01
+  Un4 Parith        0.12        1.60       0.27x    3.716818e+01
+     Aligned        0.12        1.60       0.27x    3.716818e+01
+   AlignedU2        0.12        1.60       0.27x    3.716818e+01
      CopySSE        0.05        4.02       0.67x    3.716818e+01
          SSE         N/A         N/A         N/A            N/A
     SSE UnR2         N/A         N/A         N/A            N/A
@@ -184,10 +184,10 @@ Strided Y (incx=1, incy=2)
 Both strided (incx=2, incy=2)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
-       ARMPL        0.04        5.17       1.00x    7.631021e+01
-       Naive        0.13        1.60       0.31x    7.631021e+01
+       ARMPL        0.04        5.19       1.00x    7.631021e+01
+       Naive        0.12        1.60       0.31x    7.631021e+01
      Unroll2        0.06        3.20       0.62x    7.631021e+01
-     Unroll4        0.04        5.17       1.00x    7.631021e+01
+     Unroll4        0.04        5.19       1.00x    7.631021e+01
   Un2 Parith        0.12        1.60       0.31x    7.631021e+01
   Un4 Parith        0.12        1.60       0.31x    7.631021e+01
      Aligned        0.12        1.60       0.31x    7.631021e+01
@@ -202,31 +202,31 @@ Both strided (incx=2, incy=2)
 Unit stride (incx=1, incy=1)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
-       ARMPL        0.25        7.93       1.00x   -2.631452e+02
-       Naive        0.25        8.04       1.01x   -2.631452e+02
-     Unroll2        0.64        3.13       0.40x   -2.631452e+02
-     Unroll4        0.33        6.07       0.77x   -2.631452e+02
-  Un2 Parith        1.30        1.54       0.19x   -2.631452e+02
-  Un4 Parith        1.34        1.49       0.19x   -2.631452e+02
-     Aligned        0.27        7.53       0.95x   -2.631452e+02
-   AlignedU2        1.26        1.59       0.20x   -2.631452e+02
-     CopySSE        0.27        7.54       0.95x   -2.631452e+02
-         SSE        0.64        3.14       0.40x   -2.631452e+02
-    SSE UnR2        0.33        6.07       0.77x   -2.631452e+02
-    SSE UnR4        0.26        7.58       0.96x   -2.631452e+02
+       ARMPL        0.24        8.41       1.00x   -2.631452e+02
+       Naive        0.24        8.32       0.99x   -2.631452e+02
+     Unroll2        0.64        3.13       0.37x   -2.631452e+02
+     Unroll4        0.34        5.92       0.70x   -2.631452e+02
+  Un2 Parith        1.26        1.59       0.19x   -2.631452e+02
+  Un4 Parith        1.26        1.59       0.19x   -2.631452e+02
+     Aligned        0.24        8.18       0.97x   -2.631452e+02
+   AlignedU2        1.25        1.59       0.19x   -2.631452e+02
+     CopySSE        0.25        8.15       0.97x   -2.631452e+02
+         SSE        0.63        3.16       0.38x   -2.631452e+02
+    SSE UnR2        0.32        6.23       0.74x   -2.631452e+02
+    SSE UnR4        0.25        8.15       0.97x   -2.631452e+02
 
 Strided X (incx=2, incy=1)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
-       ARMPL        0.38        5.23       1.00x    4.137840e+01
+       ARMPL        0.38        5.20       1.00x    4.137840e+01
        Naive        1.25        1.60       0.31x    4.137840e+01
      Unroll2        0.63        3.18       0.61x    4.137840e+01
-     Unroll4        0.45        4.42       0.85x    4.137840e+01
+     Unroll4        0.39        5.17       0.99x    4.137840e+01
   Un2 Parith        1.25        1.60       0.31x    4.137840e+01
-  Un4 Parith        1.26        1.59       0.30x    4.137840e+01
+  Un4 Parith        1.25        1.60       0.31x    4.137840e+01
      Aligned        1.25        1.60       0.31x    4.137840e+01
-   AlignedU2        1.26        1.59       0.30x    4.137840e+01
-     CopySSE        0.59        3.38       0.65x    4.137840e+01
+   AlignedU2        1.25        1.60       0.31x    4.137840e+01
+     CopySSE        0.60        3.33       0.64x    4.137840e+01
          SSE         N/A         N/A         N/A            N/A
     SSE UnR2         N/A         N/A         N/A            N/A
     SSE UnR4         N/A         N/A         N/A            N/A
@@ -234,15 +234,15 @@ Strided X (incx=2, incy=1)
 Strided Y (incx=1, incy=2)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
-       ARMPL        0.39        5.19       1.00x    5.269256e+02
+       ARMPL        0.39        5.13       1.00x    5.269256e+02
        Naive        1.25        1.60       0.31x    5.269256e+02
-     Unroll2        0.63        3.18       0.61x    5.269256e+02
-     Unroll4        0.39        5.07       0.98x    5.269256e+02
+     Unroll2        0.63        3.18       0.62x    5.269256e+02
+     Unroll4        0.39        5.15       1.00x    5.269256e+02
   Un2 Parith        1.25        1.60       0.31x    5.269256e+02
   Un4 Parith        1.25        1.60       0.31x    5.269256e+02
      Aligned        1.25        1.60       0.31x    5.269256e+02
    AlignedU2        1.25        1.60       0.31x    5.269256e+02
-     CopySSE        0.60        3.35       0.64x    5.269256e+02
+     CopySSE        0.70        2.85       0.56x    5.269256e+02
          SSE         N/A         N/A         N/A            N/A
     SSE UnR2         N/A         N/A         N/A            N/A
     SSE UnR4         N/A         N/A         N/A            N/A
@@ -250,15 +250,15 @@ Strided Y (incx=1, incy=2)
 Both strided (incx=2, incy=2)
     Function   Time (ms)     GFLOP/s     Speedup    Dot Product
 ----------------------------------------------------------------
-       ARMPL        0.51        3.93       1.00x   -1.549852e+02
-       Naive        1.25        1.60       0.41x   -1.549852e+02
-     Unroll2        0.63        3.18       0.81x   -1.549852e+02
-     Unroll4        0.53        3.77       0.96x   -1.549852e+02
-  Un2 Parith        1.25        1.60       0.41x   -1.549852e+02
-  Un4 Parith        1.25        1.60       0.41x   -1.549852e+02
-     Aligned        1.25        1.60       0.41x   -1.549852e+02
-   AlignedU2        1.29        1.54       0.39x   -1.549852e+02
-     CopySSE        1.25        1.60       0.41x   -1.549852e+02
+       ARMPL        0.66        3.01       1.00x   -1.549852e+02
+       Naive        1.34        1.49       0.50x   -1.549852e+02
+     Unroll2        0.63        3.17       1.05x   -1.549852e+02
+     Unroll4        0.52        3.82       1.27x   -1.549852e+02
+  Un2 Parith        1.25        1.60       0.53x   -1.549852e+02
+  Un4 Parith        1.26        1.59       0.53x   -1.549852e+02
+     Aligned        1.25        1.60       0.53x   -1.549852e+02
+   AlignedU2        1.25        1.60       0.53x   -1.549852e+02
+     CopySSE        1.08        1.86       0.62x   -1.549852e+02
          SSE         N/A         N/A         N/A            N/A
     SSE UnR2         N/A         N/A         N/A            N/A
     SSE UnR4         N/A         N/A         N/A            N/A

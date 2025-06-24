@@ -1,0 +1,688 @@
+
+=== Matrix size: 32x32 ===
+
+Unit stride (incx=1, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.000208    9.846154  1.000000x        PASS
+       Naive    0.000208    9.846154  1.000000x        PASS
+    UnrollI2    0.000416    4.923077  0.500000x        PASS
+    UnrollI8    0.000292    7.013699  0.712329x        PASS
+     BlockC4    0.000125   16.384000  1.664000x        PASS
+     BlockC8    0.000125   16.384000  1.664000x        PASS
+         SSE    0.000208    9.846154  1.000000x        PASS
+        SSE2    0.000333    6.150150  0.624625x        PASS
+   SSE_incx1    0.000375    5.461333  0.554667x        PASS
+  SSE2_incx1    0.000334    6.131737  0.622754x        PASS
+  SSE4_incx1    0.000292    7.013699  0.712329x        PASS
+     Block32    0.000125   16.384000  1.664000x        PASS
+     Block64    0.000125   16.384000  1.664000x        PASS
+     Block64    0.000125   16.384000  1.664000x        PASS
+    Block128    0.000125   16.384000  1.664000x        PASS
+    Block256    0.000125   16.384000  1.664000x        PASS
+    Block512    0.000125   16.384000  1.664000x        PASS
+
+Strided X (incx=2, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.000167   12.263473  1.000000x        PASS
+       Naive    0.000208    9.846154  0.802885x        PASS
+    UnrollI2    0.000417    4.911271  0.400480x        PASS
+    UnrollI8    0.000292    7.013699  0.571918x        PASS
+     BlockC4    0.000125   16.384000  1.336000x        PASS
+     BlockC8    0.000125   16.384000  1.336000x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    0.000125   16.384000  1.336000x        PASS
+     Block64    0.000125   16.384000  1.336000x        PASS
+     Block64    0.000125   16.384000  1.336000x        PASS
+    Block128    0.000125   16.384000  1.336000x        PASS
+    Block256    0.000125   16.384000  1.336000x        PASS
+    Block512    0.000125   16.384000  1.336000x        PASS
+
+Strided Y (incx=1, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.000209    9.799043  1.000000x        PASS
+       Naive    0.000375    5.461333  0.557333x        PASS
+    UnrollI2    0.000417    4.911271  0.501199x        PASS
+    UnrollI8    0.000292    7.013699  0.715753x        PASS
+     BlockC4    0.000166   12.337349  1.259036x        PASS
+     BlockC8    0.000125   16.384000  1.672000x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1    0.000333    6.150150  0.627628x        PASS
+  SSE2_incx1    0.000334    6.131737  0.625749x        PASS
+  SSE4_incx1    0.000333    6.150150  0.627628x        PASS
+     Block32    0.000167   12.263473  1.251497x        PASS
+     Block64    0.000167   12.263473  1.251497x        PASS
+     Block64    0.000166   12.337349  1.259036x        PASS
+    Block128    0.000167   12.263473  1.251497x        PASS
+    Block256    0.000167   12.263473  1.251497x        PASS
+    Block512    0.000167   12.263473  1.251497x        PASS
+
+Both strided (incx=2, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.000208    9.846154  1.000000x        PASS
+       Naive    0.000375    5.461333  0.554667x        PASS
+    UnrollI2    0.000416    4.923077  0.500000x        PASS
+    UnrollI8    0.000292    7.013699  0.712329x        PASS
+     BlockC4    0.000166   12.337349  1.253012x        PASS
+     BlockC8    0.000125   16.384000  1.664000x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    0.000125   16.384000  1.664000x        PASS
+     Block64    0.000167   12.263473  1.245509x        PASS
+     Block64    0.000167   12.263473  1.245509x        PASS
+    Block128    0.000167   12.263473  1.245509x        PASS
+    Block256    0.000125   16.384000  1.664000x        PASS
+    Block512    0.000167   12.263473  1.245509x        PASS
+
+=== Matrix size: 64x64 ===
+
+Unit stride (incx=1, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.000500   16.384000  1.000000x        PASS
+       Naive    0.000542   15.114391  0.922509x        PASS
+    UnrollI2    0.001459    5.614805  0.342700x        PASS
+    UnrollI8    0.001125    7.281778  0.444444x        PASS
+     BlockC4    0.000459   17.847495  1.089325x        PASS
+     BlockC8    0.000416   19.692308  1.201923x        PASS
+         SSE    0.000708   11.570621  0.706215x        PASS
+        SSE2    0.000625   13.107200  0.800000x        PASS
+   SSE_incx1    0.001292    6.340557  0.386997x        PASS
+  SSE2_incx1    0.001167    7.019709  0.428449x        PASS
+  SSE4_incx1    0.001167    7.019709  0.428449x        PASS
+     Block32    0.000458   17.886463  1.091703x        PASS
+     Block64    0.000375   21.845333  1.333333x        PASS
+     Block64    0.000375   21.845333  1.333333x        PASS
+    Block128    0.000416   19.692308  1.201923x        PASS
+    Block256    0.000375   21.845333  1.333333x        PASS
+    Block512    0.000416   19.692308  1.201923x        PASS
+
+Strided X (incx=2, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.000417   19.645084  1.000000x        PASS
+       Naive    0.000542   15.114391  0.769373x        PASS
+    UnrollI2    0.001500    5.461333  0.278000x        PASS
+    UnrollI8    0.001125    7.281778  0.370667x        PASS
+     BlockC4    0.000458   17.886463  0.910480x        PASS
+     BlockC8    0.000375   21.845333  1.112000x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    0.000458   17.886463  0.910480x        PASS
+     Block64    0.000375   21.845333  1.112000x        PASS
+     Block64    0.000416   19.692308  1.002404x        PASS
+    Block128    0.000416   19.692308  1.002404x        PASS
+    Block256    0.000375   21.845333  1.112000x        PASS
+    Block512    0.000375   21.845333  1.112000x        PASS
+
+Strided Y (incx=1, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.000625   13.107200  1.000000x        PASS
+       Naive    0.001709    4.793446  0.365711x        PASS
+    UnrollI2    0.001500    5.461333  0.416667x        PASS
+    UnrollI8    0.001125    7.281778  0.555556x        PASS
+     BlockC4    0.000500   16.384000  1.250000x        PASS
+     BlockC8    0.000500   16.384000  1.250000x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1    0.001292    6.340557  0.483746x        PASS
+  SSE2_incx1    0.001209    6.775848  0.516956x        PASS
+  SSE4_incx1    0.001167    7.019709  0.535561x        PASS
+     Block32    0.000542   15.114391  1.153137x        PASS
+     Block64    0.000500   16.384000  1.250000x        PASS
+     Block64    0.000500   16.384000  1.250000x        PASS
+    Block128    0.000500   16.384000  1.250000x        PASS
+    Block256    0.000500   16.384000  1.250000x        PASS
+    Block512    0.000500   16.384000  1.250000x        PASS
+
+Both strided (incx=2, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.000625   13.107200  1.000000x        PASS
+       Naive    0.001708    4.796253  0.365925x        PASS
+    UnrollI2    0.001459    5.614805  0.428376x        PASS
+    UnrollI8    0.001125    7.281778  0.555556x        PASS
+     BlockC4    0.000500   16.384000  1.250000x        PASS
+     BlockC8    0.000459   17.847495  1.361656x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    0.000542   15.114391  1.153137x        PASS
+     Block64    0.000500   16.384000  1.250000x        PASS
+     Block64    0.000500   16.384000  1.250000x        PASS
+    Block128    0.000500   16.384000  1.250000x        PASS
+    Block256    0.000500   16.384000  1.250000x        PASS
+    Block512    0.000500   16.384000  1.250000x        PASS
+
+=== Matrix size: 128x128 ===
+
+Unit stride (incx=1, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.002167   15.121366  1.000000x        PASS
+       Naive    0.002292   14.296684  0.945462x        PASS
+    UnrollI2    0.005792    5.657459  0.374137x        PASS
+    UnrollI8    0.004625    7.084973  0.468541x        PASS
+     BlockC4    0.002000   16.384000  1.083500x        PASS
+     BlockC8    0.001584   20.686869  1.368056x        PASS
+         SSE    0.003750    8.738133  0.577867x        PASS
+        SSE2    0.002542   12.890637  0.852478x        PASS
+   SSE_incx1    0.016750    1.956299  0.129373x        PASS
+  SSE2_incx1    0.013542    2.419731  0.160021x        PASS
+  SSE4_incx1    0.013542    2.419731  0.160021x        PASS
+     Block32    0.005166    6.343012  0.419473x        PASS
+     Block64    0.004833    6.780054  0.448376x        PASS
+     Block64    0.004833    6.780054  0.448376x        PASS
+    Block128    0.004666    7.022718  0.464423x        PASS
+    Block256    0.004666    7.022718  0.464423x        PASS
+    Block512    0.004667    7.021213  0.464324x        PASS
+
+Strided X (incx=2, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.005000    6.553600  1.000000x        PASS
+       Naive    0.007042    4.653224  0.710026x        PASS
+    UnrollI2    0.017000    1.927529  0.294118x        PASS
+    UnrollI8    0.013708    2.390429  0.364751x        PASS
+     BlockC4    0.005916    5.538878  0.845166x        PASS
+     BlockC8    0.004750    6.898526  1.052632x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    0.005167    6.341784  0.967680x        PASS
+     Block64    0.004792    6.838063  1.043406x        PASS
+     Block64    0.004917    6.664226  1.016880x        PASS
+    Block128    0.004708    6.960068  1.062022x        PASS
+    Block256    0.004708    6.960068  1.062022x        PASS
+    Block512    0.004833    6.780054  1.034554x        PASS
+
+Strided Y (incx=1, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.006792    4.824499  1.000000x        PASS
+       Naive    0.018750    1.747627  0.362240x        PASS
+    UnrollI2    0.017000    1.927529  0.399529x        PASS
+    UnrollI8    0.013584    2.412250  0.500000x        PASS
+     BlockC4    0.006042    5.423370  1.124131x        PASS
+     BlockC8    0.006000    5.461333  1.132000x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1    0.016750    1.956299  0.405493x        PASS
+  SSE2_incx1    0.013625    2.404991  0.498495x        PASS
+  SSE4_incx1    0.013625    2.404991  0.498495x        PASS
+     Block32    0.005875    5.577532  1.156085x        PASS
+     Block64    0.005667    5.782248  1.198518x        PASS
+     Block64    0.005584    5.868195  1.216332x        PASS
+    Block128    0.005791    5.658436  1.172854x        PASS
+    Block256    0.005792    5.657459  1.172652x        PASS
+    Block512    0.005833    5.617692  1.164409x        PASS
+
+Both strided (incx=2, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.006958    4.709399  1.000000x        PASS
+       Naive    0.018666    1.755491  0.372763x        PASS
+    UnrollI2    0.017083    1.918164  0.407306x        PASS
+    UnrollI8    0.013667    2.397600  0.509110x        PASS
+     BlockC4    0.005958    5.499832  1.167842x        PASS
+     BlockC8    0.005833    5.617692  1.192868x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    0.005834    5.616730  1.192664x        PASS
+     Block64    0.005792    5.657459  1.201312x        PASS
+     Block64    0.005667    5.782248  1.227810x        PASS
+    Block128    0.005959    5.498909  1.167646x        PASS
+    Block256    0.005792    5.657459  1.201312x        PASS
+    Block512    0.005834    5.616730  1.192664x        PASS
+
+=== Matrix size: 512x512 ===
+
+Unit stride (incx=1, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.096833    5.414353  1.000000x        PASS
+       Naive    0.099125    5.289160  0.976878x        PASS
+    UnrollI2    0.226083    2.319007  0.428307x        PASS
+    UnrollI8    0.187084    2.802420  0.517591x        PASS
+     BlockC4    0.095458    5.492342  1.014404x        PASS
+     BlockC8    0.039500   13.273114  2.451468x        PASS
+         SSE    0.054375    9.642078  1.780837x        PASS
+        SSE2    0.048000   10.922667  2.017354x        PASS
+   SSE_incx1    0.092000    5.698783  1.052533x        PASS
+  SSE2_incx1    0.082875    6.326250  1.168422x        PASS
+  SSE4_incx1    0.082875    6.326250  1.168422x        PASS
+     Block32    0.043750   11.983726  2.213326x        PASS
+     Block64    0.038625   13.573799  2.507003x        PASS
+     Block64    0.038708   13.544694  2.501628x        PASS
+    Block128    0.069709    7.521095  1.389103x        PASS
+    Block256    0.067875    7.724317  1.426637x        PASS
+    Block512    0.067875    7.724317  1.426637x        PASS
+
+Strided X (incx=2, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.067875    7.724317  1.000000x        PASS
+       Naive    0.084666    6.192427  0.801680x        PASS
+    UnrollI2    0.193500    2.709499  0.350775x        PASS
+    UnrollI8    0.138791    3.777536  0.489045x        PASS
+     BlockC4    0.070917    7.392981  0.957105x        PASS
+     BlockC8    0.057750    9.078580  1.175325x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    0.070334    7.454261  0.965038x        PASS
+     Block64    0.062084    8.444817  1.093277x        PASS
+     Block64    0.062125    8.439243  1.092555x        PASS
+    Block128    0.060625    8.648049  1.119588x        PASS
+    Block256    0.059084    8.873604  1.148788x        PASS
+    Block512    0.059042    8.879916  1.149605x        PASS
+
+Strided Y (incx=1, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.069709    7.521095  1.000000x        PASS
+       Naive    0.160541    3.265758  0.434213x        PASS
+    UnrollI2    0.168208    3.116903  0.414421x        PASS
+    UnrollI8    0.137625    3.809540  0.506514x        PASS
+     BlockC4    0.069667    7.525629  1.000603x        PASS
+     BlockC8    0.055125    9.510893  1.264562x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1    0.130542    4.016240  0.533997x        PASS
+  SSE2_incx1    0.117917    4.446246  0.591170x        PASS
+  SSE4_incx1    0.117792    4.450964  0.591797x        PASS
+     Block32    0.065042    8.060761  1.071754x        PASS
+     Block64    0.058458    8.968627  1.192463x        PASS
+     Block64    0.058541    8.955911  1.190772x        PASS
+    Block128    0.057750    9.078580  1.207082x        PASS
+    Block256    0.056250    9.320676  1.239271x        PASS
+    Block512    0.056291    9.313887  1.238368x        PASS
+
+Both strided (incx=2, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.055417    9.460779  1.000000x        PASS
+       Naive    0.126917    4.130952  0.436640x        PASS
+    UnrollI2    0.132958    3.943260  0.416801x        PASS
+    UnrollI8    0.108750    4.821039  0.509582x        PASS
+     BlockC4    0.054958    9.539794  1.008352x        PASS
+     BlockC8    0.049458   10.600671  1.120486x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    0.058333    8.987846  0.950011x        PASS
+     Block64    0.052541    9.978645  1.054738x        PASS
+     Block64    0.052542    9.978455  1.054718x        PASS
+    Block128    0.051708   10.139398  1.071730x        PASS
+    Block256    0.050500   10.381941  1.097366x        PASS
+    Block512    0.050459   10.390376  1.098258x        PASS
+
+=== Matrix size: 1024x1024 ===
+
+Unit stride (incx=1, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.194792   10.766109  1.000000x        PASS
+       Naive    0.205958   10.182426  0.945785x        PASS
+    UnrollI2    0.449208    4.668554  0.433634x        PASS
+    UnrollI8    0.354125    5.922067  0.550066x        PASS
+     BlockC4    0.178250   11.765229  1.092802x        PASS
+     BlockC8    0.150333   13.950044  1.295737x        PASS
+         SSE    0.210375    9.968637  0.925928x        PASS
+        SSE2    0.194625   10.775347  1.000858x        PASS
+   SSE_incx1    0.371959    5.638127  0.523692x        PASS
+  SSE2_incx1    0.313208    6.695717  0.621925x        PASS
+  SSE4_incx1    0.313208    6.695717  0.621925x        PASS
+     Block32    0.182750   11.475524  1.065893x        PASS
+     Block64    0.156750   13.378960  1.242692x        PASS
+     Block64    0.153750   13.640013  1.266940x        PASS
+    Block128    0.149417   14.035565  1.303680x        PASS
+    Block256    0.148167   14.153975  1.314679x        PASS
+    Block512    0.147875   14.181924  1.317275x        PASS
+
+Strided X (incx=2, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.137834   15.215056  1.000000x        PASS
+       Naive    0.173208   12.107709  0.795772x        PASS
+    UnrollI2    0.370708    5.657153  0.371813x        PASS
+    UnrollI8    0.311583    6.730637  0.442367x        PASS
+     BlockC4    0.158875   13.200013  0.867563x        PASS
+     BlockC8    0.133084   15.758108  1.035692x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    0.174375   12.026678  0.790446x        PASS
+     Block64    0.149959   13.984836  0.919145x        PASS
+     Block64    0.146500   14.315031  0.940846x        PASS
+    Block128    0.141083   14.864668  0.976971x        PASS
+    Block256    0.139083   15.078421  0.991020x        PASS
+    Block512    0.138667   15.123656  0.993993x        PASS
+
+Strided Y (incx=1, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.155959   13.446816  1.000000x        PASS
+       Naive    0.345541    6.069184  0.451347x        PASS
+    UnrollI2    0.365084    5.744300  0.427187x        PASS
+    UnrollI8    0.302125    6.941339  0.516207x        PASS
+     BlockC4    0.150750   13.911456  1.034554x        PASS
+     BlockC8    0.140417   14.935172  1.110685x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1    0.322750    6.497760  0.483219x        PASS
+  SSE2_incx1    0.290208    7.226376  0.537404x        PASS
+  SSE4_incx1    0.290834    7.210821  0.536247x        PASS
+     Block32    0.179000   11.715933  0.871279x        PASS
+     Block64    0.156917   13.364721  0.993895x        PASS
+     Block64    0.154416   13.581183  1.009992x        PASS
+    Block128    0.150875   13.899930  1.033697x        PASS
+    Block256    0.149708   14.008283  1.041755x        PASS
+    Block512    0.149375   14.039511  1.044077x        PASS
+
+Both strided (incx=2, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.157416   13.322356  1.000000x        PASS
+       Naive    0.345209    6.075021  0.456002x        PASS
+    UnrollI2    0.364083    5.760093  0.432363x        PASS
+    UnrollI8    0.302333    6.936563  0.520671x        PASS
+     BlockC4    0.150500   13.934565  1.045953x        PASS
+     BlockC8    0.140500   14.926349  1.120399x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    0.179209   11.702269  0.878393x        PASS
+     Block64    0.156959   13.361145  1.002912x        PASS
+     Block64    0.154083   13.610535  1.021631x        PASS
+    Block128    0.151125   13.876936  1.041628x        PASS
+    Block256    0.149375   14.039511  1.053831x        PASS
+    Block512    0.149209   14.055131  1.055003x        PASS
+
+=== Matrix size: 2048x2048 ===
+
+Unit stride (incx=1, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.843500    9.945001  1.000000x        PASS
+       Naive    0.667875   12.560147  1.262961x        PASS
+    UnrollI2    1.419625    5.909031  0.594171x        PASS
+    UnrollI8    1.198166    7.001207  0.703993x        PASS
+     BlockC4    0.848125    9.890768  0.994547x        PASS
+     BlockC8    0.741750   11.309212  1.137176x        PASS
+         SSE    0.710083   11.813560  1.187889x        PASS
+        SSE2    0.681250   12.313553  1.238165x        PASS
+   SSE_incx1    1.276625    6.570926  0.660727x        PASS
+  SSE2_incx1    1.151958    7.282043  0.732232x        PASS
+  SSE4_incx1    1.152000    7.281778  0.732205x        PASS
+     Block32    3.472541    2.415697  0.242906x        PASS
+     Block64    3.627208    2.312690  0.232548x        PASS
+     Block64    3.677708    2.280934  0.229355x        PASS
+    Block128    2.078083    4.036705  0.405903x        PASS
+    Block256    1.553667    5.399232  0.542909x        PASS
+    Block512    1.549834    5.412585  0.544252x        PASS
+
+Strided X (incx=2, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.758292   11.062504  1.000000x        PASS
+       Naive    0.649333   12.918807  1.167801x        PASS
+    UnrollI2    1.429458    5.868384  0.530475x        PASS
+    UnrollI8    1.208667    6.940380  0.627379x        PASS
+     BlockC4    0.845458    9.921969  0.896901x        PASS
+     BlockC8    0.835709   10.037714  0.907364x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    3.464250    2.421479  0.218891x        PASS
+     Block64    3.630666    2.310487  0.208858x        PASS
+     Block64    3.688791    2.274081  0.205567x        PASS
+    Block128    2.095083    4.003950  0.361939x        PASS
+    Block256    1.554834    5.395179  0.487700x        PASS
+    Block512    1.545416    5.428058  0.490672x        PASS
+
+Strided Y (incx=1, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.838042   10.009770  1.000000x        PASS
+       Naive    1.345750    6.233407  0.622732x        PASS
+    UnrollI2    1.419792    5.908336  0.590257x        PASS
+    UnrollI8    1.189792    7.050483  0.704360x        PASS
+     BlockC4    0.880542    9.526642  0.951734x        PASS
+     BlockC8    0.838000   10.010272  1.000050x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1    1.298875    6.458364  0.645206x        PASS
+  SSE2_incx1    1.174125    7.144561  0.713759x        PASS
+  SSE4_incx1    1.178375    7.118793  0.711184x        PASS
+     Block32    3.826166    2.192432  0.219029x        PASS
+     Block64    3.819916    2.196019  0.219388x        PASS
+     Block64    3.765292    2.227877  0.222570x        PASS
+    Block128    2.166333    3.872262  0.386848x        PASS
+    Block256    1.586625    5.287077  0.528192x        PASS
+    Block512    1.609708    5.211261  0.520617x        PASS
+
+Both strided (incx=2, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    0.864250    9.706229  1.000000x        PASS
+       Naive    1.369042    6.127356  0.631281x        PASS
+    UnrollI2    1.444417    5.807608  0.598338x        PASS
+    UnrollI8    1.205834    6.956686  0.716724x        PASS
+     BlockC4    0.814958   10.293301  1.060484x        PASS
+     BlockC8    0.769875   10.896065  1.122585x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32    3.607042    2.325620  0.239601x        PASS
+     Block64    3.724958    2.252001  0.232016x        PASS
+     Block64    3.772958    2.223350  0.229064x        PASS
+    Block128    2.125083    3.947426  0.406690x        PASS
+    Block256    1.570292    5.342069  0.550375x        PASS
+    Block512    1.586916    5.286107  0.544610x        PASS
+
+=== Matrix size: 4096x4096 ===
+
+Unit stride (incx=1, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    3.341750   10.040976  1.000000x        PASS
+       Naive    2.639833   12.710816  1.265894x        PASS
+    UnrollI2    5.783834    5.801417  0.577774x        PASS
+    UnrollI8    4.916583    6.824746  0.679690x        PASS
+     BlockC4    7.959000    4.215911  0.419871x        PASS
+     BlockC8    3.616375    9.278471  0.924061x        PASS
+         SSE    2.928417   11.458215  1.141146x        PASS
+        SSE2    2.755916   12.175419  1.212573x        PASS
+   SSE_incx1    5.112417    6.563321  0.653654x        PASS
+  SSE2_incx1    4.608875    7.280395  0.725068x        PASS
+  SSE4_incx1    4.625583    7.254098  0.722449x        PASS
+     Block32   14.021208    2.393120  0.238335x        PASS
+     Block64   14.604291    2.297574  0.228820x        PASS
+     Block64   14.936750    2.246435  0.223727x        PASS
+    Block128    8.531333    3.933082  0.391703x        PASS
+    Block256    6.849958    4.898487  0.487850x        PASS
+    Block512    6.723042    4.990960  0.497059x        PASS
+
+Strided X (incx=2, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    3.118875   10.758505  1.000000x        PASS
+       Naive    2.638709   12.716231  1.181970x        PASS
+    UnrollI2    5.832291    5.753216  0.534760x        PASS
+    UnrollI8    4.888958    6.863310  0.637943x        PASS
+     BlockC4    7.859458    4.269306  0.396831x        PASS
+     BlockC8    4.249125    7.896786  0.734004x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32   23.147417    1.449597  0.134740x        PASS
+     Block64   16.933625    1.981527  0.184182x        PASS
+     Block64   15.589583    2.152362  0.200061x        PASS
+    Block128    9.262583    3.622578  0.336718x        PASS
+    Block256    7.403958    4.531959  0.421244x        PASS
+    Block512    7.493917    4.477556  0.416188x        PASS
+
+Strided Y (incx=1, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    4.072292    8.239692  1.000000x        PASS
+       Naive    5.553042    6.042532  0.733344x        PASS
+    UnrollI2    5.932125    5.656393  0.686481x        PASS
+    UnrollI8    4.906042    6.839410  0.830056x        PASS
+     BlockC4    3.724083    9.010119  1.093502x        PASS
+     BlockC8    3.606292    9.304414  1.129219x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1    5.220958    6.426873  0.779989x        PASS
+  SSE2_incx1    4.865250    6.896754  0.837016x        PASS
+  SSE4_incx1    4.706333    7.129634  0.865279x        PASS
+     Block32   14.694834    2.283417  0.277124x        PASS
+     Block64   15.010917    2.235335  0.271289x        PASS
+     Block64   15.310459    2.191602  0.265981x        PASS
+    Block128    8.843166    3.794391  0.460502x        PASS
+    Block256    6.824833    4.916521  0.596687x        PASS
+    Block512    6.807500    4.929039  0.598207x        PASS
+
+Both strided (incx=2, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL    3.458166    9.702956  1.000000x        PASS
+       Naive    5.447209    6.159931  0.634851x        PASS
+    UnrollI2    5.757583    5.827868  0.600628x        PASS
+    UnrollI8    4.809625    6.976517  0.719009x        PASS
+     BlockC4    3.464875    9.684168  0.998064x        PASS
+     BlockC8    3.242500   10.348321  1.066512x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32   14.672541    2.286886  0.235690x        PASS
+     Block64   14.952708    2.244037  0.231274x        PASS
+     Block64   15.923667    2.107205  0.217171x        PASS
+    Block128   10.035125    3.343698  0.344606x        PASS
+    Block256    7.063125    4.750650  0.489608x        PASS
+    Block512    7.692167    4.362156  0.449570x        PASS
+
+=== Matrix size: 8192x8192 ===
+
+Unit stride (incx=1, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL   12.970208   10.348155  1.000000x        PASS
+       Naive   12.167333   11.030990  1.065986x        PASS
+    UnrollI2   47.612500    2.818960  0.272412x        PASS
+    UnrollI8   21.878542    6.134674  0.592828x        PASS
+     BlockC4   14.241084    9.424685  0.910760x        PASS
+     BlockC8   11.487375   11.683934  1.129084x        PASS
+         SSE   20.263083    6.623757  0.640091x        PASS
+        SSE2   18.904625    7.099730  0.686086x        PASS
+   SSE_incx1   25.295583    5.305975  0.512746x        PASS
+  SSE2_incx1   21.822458    6.150440  0.594351x        PASS
+  SSE4_incx1   21.811292    6.153589  0.594656x        PASS
+     Block32   56.485750    2.376134  0.229619x        PASS
+     Block64   58.765375    2.283959  0.220712x        PASS
+     Block64   60.599000    2.214851  0.214033x        PASS
+    Block128   34.244458    3.919400  0.378753x        PASS
+    Block256   27.105792    4.951625  0.478503x        PASS
+    Block512   26.999083    4.971196  0.480394x        PASS
+
+Strided X (incx=2, incy=1)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL   11.292500   11.885564  1.000000x        PASS
+       Naive   12.330042   10.885423  0.915853x        PASS
+    UnrollI2   48.024875    2.794754  0.235139x        PASS
+    UnrollI8   22.027208    6.093270  0.512661x        PASS
+     BlockC4   14.268083    9.406851  0.791452x        PASS
+     BlockC8   11.459417   11.712439  0.985434x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32   56.352917    2.381735  0.200389x        PASS
+     Block64   58.828459    2.281510  0.191956x        PASS
+     Block64   60.558166    2.216344  0.186474x        PASS
+    Block128   34.287416    3.914489  0.329348x        PASS
+    Block256   26.935667    4.982900  0.419240x        PASS
+    Block512   27.145750    4.944337  0.415995x        PASS
+
+Strided Y (incx=1, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL   13.447958    9.980528  1.000000x        PASS
+       Naive   29.678500    4.522389  0.453121x        PASS
+    UnrollI2   30.239000    4.438564  0.444722x        PASS
+    UnrollI8   29.142292    4.605600  0.461458x        PASS
+     BlockC4   12.883875   10.417497  1.043782x        PASS
+     BlockC8   12.029000   11.157846  1.117961x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1   27.443458    4.890700  0.490024x        PASS
+  SSE2_incx1   26.302791    5.102794  0.511275x        PASS
+  SSE4_incx1   26.271000    5.108969  0.511894x        PASS
+     Block32   58.831709    2.281384  0.228584x        PASS
+     Block64   60.110625    2.232845  0.223720x        PASS
+     Block64   61.523000    2.181586  0.218584x        PASS
+    Block128   35.190291    3.814056  0.382150x        PASS
+    Block256   27.360750    4.905484  0.491505x        PASS
+    Block512   27.405958    4.897392  0.490695x        PASS
+
+Both strided (incx=2, incy=2)
+    Function   Time (ms)     GFLOP/s   Speedup     Verify
+----------------------------------------------------------
+       ARMPL   13.164041   10.195785  1.000000x        PASS
+       Naive   29.715083    4.516822  0.443009x        PASS
+    UnrollI2   30.210459    4.442757  0.435744x        PASS
+    UnrollI8   29.116666    4.609653  0.452114x        PASS
+     BlockC4   12.881416   10.419486  1.021941x        PASS
+     BlockC8   12.077375   11.113154  1.089975x        PASS
+         SSE         N/A         N/A       N/A        N/A
+        SSE2         N/A         N/A       N/A        N/A
+   SSE_incx1         N/A         N/A       N/A        N/A
+  SSE2_incx1         N/A         N/A       N/A        N/A
+  SSE4_incx1         N/A         N/A       N/A        N/A
+     Block32   58.738750    2.284995  0.224112x        PASS
+     Block64   60.206250    2.229299  0.218649x        PASS
+     Block64   61.582333    2.179484  0.213763x        PASS
+    Block128   35.518750    3.778785  0.370622x        PASS
+    Block256   27.497458    4.881096  0.478737x        PASS
+    Block512   27.378458    4.902311  0.480817x        PASS

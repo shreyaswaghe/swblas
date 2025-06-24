@@ -4,27 +4,27 @@
 Unit stride (incx=1, incy=1)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.00       29.99      1.00x
-     Naive        0.00       32.00      1.07x
-   Unroll2        0.00        7.27      0.24x
-   Unroll4        0.00        8.00      0.27x
-   Unroll8        0.00        7.39      0.25x
-  Unroll16        0.01        3.38      0.11x
+     ARMPL        0.00       30.03      1.00x
+     Naive        0.00       30.03      1.00x
+   Unroll2        0.00        7.16      0.24x
+   Unroll4        0.00        7.27      0.24x
+   Unroll8        0.00        7.27      0.24x
+  Unroll16        0.01        3.27      0.11x
    Aligned        0.00       32.00      1.07x
        SSE        0.00       19.19      0.64x
-  SSE UnR2        0.00       28.25      0.94x
+  SSE UnR2        0.00       26.67      0.89x
   SSE UnR4        0.00       32.00      1.07x
 
 Strided X (incx=2, incy=1)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.00       12.63      1.00x
-     Naive        0.00        4.40      0.35x
-   Unroll2        0.00        5.78      0.46x
-   Unroll4        0.00        6.40      0.51x
-   Unroll8        0.00        7.39      0.58x
-  Unroll16        0.01        3.24      0.26x
-   Aligned        0.00        4.95      0.39x
+     ARMPL        0.00       12.97      1.00x
+     Naive        0.00        4.53      0.35x
+   Unroll2        0.00        6.00      0.46x
+   Unroll4        0.00        6.15      0.47x
+   Unroll8        0.00        7.27      0.56x
+  Unroll16        0.01        3.29      0.25x
+   Aligned        0.00        5.00      0.39x
        SSE         N/A         N/A      N/A
   SSE UnR2         N/A         N/A      N/A
   SSE UnR4         N/A         N/A      N/A
@@ -32,13 +32,13 @@ Strided X (incx=2, incy=1)
 Strided Y (incx=1, incy=2)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.00        8.00      1.00x
-     Naive        0.00        6.08      0.76x
-   Unroll2        0.00        7.38      0.92x
-   Unroll4        0.00        8.00      1.00x
-   Unroll8        0.00        7.39      0.92x
-  Unroll16        0.01        3.31      0.41x
-   Aligned        0.00        6.08      0.76x
+     ARMPL        0.01        3.36      1.00x
+     Naive        0.01        2.53      0.75x
+   Unroll2        0.01        3.10      0.92x
+   Unroll4        0.01        3.31      0.99x
+   Unroll8        0.01        3.06      0.91x
+  Unroll16        0.01        1.37      0.41x
+   Aligned        0.01        2.53      0.75x
        SSE         N/A         N/A      N/A
   SSE UnR2         N/A         N/A      N/A
   SSE UnR4         N/A         N/A      N/A
@@ -46,13 +46,13 @@ Strided Y (incx=1, incy=2)
 Both strided (incx=2, incy=2)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.00        5.33      1.00x
-     Naive        0.00        5.52      1.03x
-   Unroll2        0.00        5.65      1.06x
-   Unroll4        0.00        5.65      1.06x
-   Unroll8        0.00        5.52      1.03x
-  Unroll16        0.01        2.96      0.56x
-   Aligned        0.00        5.45      1.02x
+     ARMPL        0.01        2.20      1.00x
+     Naive        0.01        2.30      1.04x
+   Unroll2        0.01        2.39      1.08x
+   Unroll4        0.01        2.35      1.07x
+   Unroll8        0.01        2.30      1.04x
+  Unroll16        0.02        1.23      0.56x
+   Aligned        0.01        2.27      1.03x
        SSE         N/A         N/A      N/A
   SSE UnR2         N/A         N/A      N/A
   SSE UnR4         N/A         N/A      N/A
@@ -62,27 +62,27 @@ Both strided (incx=2, incy=2)
 Unit stride (incx=1, incy=1)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.01       16.67      1.00x
-     Naive        0.01       17.27      1.04x
-   Unroll2        0.03        6.76      0.41x
-   Unroll4        0.03        6.88      0.41x
-   Unroll8        0.03        6.57      0.39x
-  Unroll16        0.06        3.19      0.19x
-   Aligned        0.01       17.33      1.04x
-       SSE        0.01       16.67      1.00x
-  SSE UnR2        0.01       17.20      1.03x
-  SSE UnR4        0.01       17.20      1.03x
+     ARMPL        0.03        7.13      1.00x
+     Naive        0.03        7.15      1.00x
+   Unroll2        0.07        2.77      0.39x
+   Unroll4        0.07        2.83      0.40x
+   Unroll8        0.07        2.71      0.38x
+  Unroll16        0.15        1.32      0.19x
+   Aligned        0.03        7.17      1.01x
+       SSE        0.03        6.81      0.95x
+  SSE UnR2        0.03        7.09      0.99x
+  SSE UnR4        0.03        7.11      1.00x
 
 Strided X (incx=2, incy=1)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.02        8.76      1.00x
-     Naive        0.03        6.06      0.69x
-   Unroll2        0.03        6.54      0.75x
-   Unroll4        0.03        6.58      0.75x
-   Unroll8        0.03        6.37      0.73x
-  Unroll16        0.06        3.24      0.37x
-   Aligned        0.03        6.02      0.69x
+     ARMPL        0.05        3.82      1.00x
+     Naive        0.08        2.48      0.65x
+   Unroll2        0.08        2.65      0.69x
+   Unroll4        0.07        2.71      0.71x
+   Unroll8        0.07        3.05      0.80x
+  Unroll16        0.13        1.55      0.41x
+   Aligned        0.07        2.84      0.74x
        SSE         N/A         N/A      N/A
   SSE UnR2         N/A         N/A      N/A
   SSE UnR4         N/A         N/A      N/A
@@ -90,13 +90,13 @@ Strided X (incx=2, incy=1)
 Strided Y (incx=1, incy=2)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.03        7.41      1.00x
-     Naive        0.03        6.23      0.84x
-   Unroll2        0.03        6.43      0.87x
-   Unroll4        0.03        6.43      0.87x
-   Unroll8        0.03        6.30      0.85x
-  Unroll16        0.06        3.27      0.44x
-   Aligned        0.03        6.23      0.84x
+     ARMPL        0.06        3.44      1.00x
+     Naive        0.07        2.89      0.84x
+   Unroll2        0.07        2.98      0.87x
+   Unroll4        0.07        2.99      0.87x
+   Unroll8        0.07        2.88      0.84x
+  Unroll16        0.13        1.52      0.44x
+   Aligned        0.07        2.90      0.84x
        SSE         N/A         N/A      N/A
   SSE UnR2         N/A         N/A      N/A
   SSE UnR4         N/A         N/A      N/A
@@ -104,13 +104,13 @@ Strided Y (incx=1, incy=2)
 Both strided (incx=2, incy=2)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.03        5.93      1.00x
-     Naive        0.03        6.05      1.02x
-   Unroll2        0.03        6.05      1.02x
-   Unroll4        0.03        6.03      1.02x
-   Unroll8        0.03        5.95      1.00x
-  Unroll16        0.07        2.96      0.50x
-   Aligned        0.03        6.02      1.01x
+     ARMPL        0.08        2.59      1.00x
+     Naive        0.07        2.73      1.06x
+   Unroll2        0.07        2.80      1.08x
+   Unroll4        0.07        2.79      1.08x
+   Unroll8        0.07        2.74      1.06x
+  Unroll16        0.14        1.46      0.56x
+   Aligned        0.06        3.25      1.26x
        SSE         N/A         N/A      N/A
   SSE UnR2         N/A         N/A      N/A
   SSE UnR4         N/A         N/A      N/A
@@ -120,27 +120,27 @@ Both strided (incx=2, incy=2)
 Unit stride (incx=1, incy=1)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.12       16.33      1.00x
-     Naive        0.12       17.17      1.05x
-   Unroll2        0.37        5.45      0.33x
-   Unroll4        0.39        5.10      0.31x
-   Unroll8        0.32        6.22      0.38x
-  Unroll16        0.64        3.13      0.19x
-   Aligned        0.12       17.19      1.05x
-       SSE        0.15       13.43      0.82x
-  SSE UnR2        0.12       16.38      1.00x
-  SSE UnR4        0.12       16.96      1.04x
+     ARMPL        0.21        9.75      1.00x
+     Naive        0.19       10.36      1.06x
+   Unroll2        0.61        3.30      0.34x
+   Unroll4        0.57        3.50      0.36x
+   Unroll8        0.47        4.23      0.43x
+  Unroll16        0.94        2.12      0.22x
+   Aligned        0.16       12.53      1.28x
+       SSE        0.20        9.81      1.01x
+  SSE UnR2        0.17       11.92      1.22x
+  SSE UnR4        0.16       12.36      1.27x
 
 Strided X (incx=2, incy=1)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.24        8.31      1.00x
-     Naive        0.40        5.06      0.61x
-   Unroll2        0.37        5.41      0.65x
-   Unroll4        0.36        5.56      0.67x
-   Unroll8        0.34        5.84      0.70x
-  Unroll16        0.66        3.03      0.36x
-   Aligned        0.40        5.04      0.61x
+     ARMPL        0.28        7.19      1.00x
+     Naive        0.46        4.39      0.61x
+   Unroll2        0.43        4.68      0.65x
+   Unroll4        0.41        4.90      0.68x
+   Unroll8        0.37        5.37      0.75x
+  Unroll16        0.71        2.81      0.39x
+   Aligned        0.43        4.70      0.65x
        SSE         N/A         N/A      N/A
   SSE UnR2         N/A         N/A      N/A
   SSE UnR4         N/A         N/A      N/A
@@ -148,13 +148,13 @@ Strided X (incx=2, incy=1)
 Strided Y (incx=1, incy=2)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.32        6.32      1.00x
-     Naive        0.38        5.23      0.83x
-   Unroll2        0.35        5.64      0.89x
-   Unroll4        0.35        5.79      0.92x
-   Unroll8        0.36        5.51      0.87x
-  Unroll16        0.69        2.91      0.46x
-   Aligned        0.39        5.14      0.81x
+     ARMPL        0.32        6.15      1.00x
+     Naive        0.39        5.07      0.82x
+   Unroll2        0.36        5.49      0.89x
+   Unroll4        0.36        5.63      0.91x
+   Unroll8        0.38        5.33      0.87x
+  Unroll16        0.70        2.84      0.46x
+   Aligned        0.39        5.09      0.83x
        SSE         N/A         N/A      N/A
   SSE UnR2         N/A         N/A      N/A
   SSE UnR4         N/A         N/A      N/A
@@ -162,13 +162,13 @@ Strided Y (incx=1, incy=2)
 Both strided (incx=2, incy=2)
   Function   Time (ms)     GFLOP/s  Speedup
 --------------------------------------------
-     ARMPL        0.39        5.12      1.00x
-     Naive        0.39        5.14      1.00x
-   Unroll2        0.36        5.49      1.07x
-   Unroll4        0.36        5.55      1.08x
-   Unroll8        0.38        5.31      1.04x
-  Unroll16        0.71        2.83      0.55x
-   Aligned        0.39        5.12      1.00x
+     ARMPL        0.40        5.00      1.00x
+     Naive        0.40        5.02      1.00x
+   Unroll2        0.37        5.35      1.07x
+   Unroll4        0.37        5.45      1.09x
+   Unroll8        0.38        5.20      1.04x
+  Unroll16        0.72        2.76      0.55x
+   Aligned        0.40        5.02      1.00x
        SSE         N/A         N/A      N/A
   SSE UnR2         N/A         N/A      N/A
   SSE UnR4         N/A         N/A      N/A

@@ -15,7 +15,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Compiler flags for optimization
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -march=native -ffast-math")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -march=native -ffast-math -Wall")
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -Wall -Wextra")
 
 # Find OpenMP for parallelization

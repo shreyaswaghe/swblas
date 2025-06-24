@@ -27,6 +27,26 @@ float cblas_snrm2(size_t n, float* x, size_t incx);
 double cblas_dasum(size_t n, double* x, size_t incx);
 float cblas_sasum(size_t n, float* x, size_t incx);
 
+//
+// LEVEL 2 ROUTINES
+//
+
+namespace impl {
+
+void cblas_dgemvCN(size_t m, size_t n, double alpha, const double* a,
+				   size_t lda, const double* x, size_t incx, double beta,
+				   double* y, size_t incy);
+
+void cblas_dgemvCT(size_t m, size_t n, double alpha, const double* a,
+				   size_t lda, const double* x, size_t incx, double beta,
+				   double* y, size_t incy);
+
+}  // namespace impl
+
+void cblas_dgemv(char fmt, char trans, size_t m, size_t n, double alpha,
+				 const double* a, size_t lda, const double* x, size_t incx,
+				 double beta, double* y, size_t incy);
+
 }  // namespace swblas
 
 #endif

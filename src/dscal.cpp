@@ -1,5 +1,7 @@
+#include <algorithm>
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 
 #include "../include/dscal.h"
 #include "sdot.h"
@@ -137,7 +139,14 @@ void cblas_dscal_neon(size_t n, double alpha, double* __restrict x, size_t) {
 namespace swblas {
 
 void cblas_dscal(size_t n, double alpha, double* x, size_t incx) {
-	if (n == 0) return;
+	if (n == 0 || incx == 0 || alpha == 1.0) return;
+
+	if (alpha == 0.0) {
+		if (incx == 1) {
+			std::fill_n(x, n, 0);
+			return;
+		}
+	}
 
 	bool bdry_diff = (uintptr_t)x % 16;
 	// for doubles, they can only be off-by-one for a 16 byte bdry
